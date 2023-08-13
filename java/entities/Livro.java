@@ -1,7 +1,5 @@
 package entities;
 
-import java.math.BigDecimal;
-
 public abstract class Livro {
 	private String titulo;
 	private String autores;

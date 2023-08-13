@@ -1,14 +1,12 @@
 package entities;
 
-import java.math.BigDecimal;
-
 public class Venda {
 	private Livro[] livros;
 	private static int numVendas = 0;
 	private int numero;
 	private String cliente;
-	private BigDecimal valor;
-	public Venda(Livro[] livros, int numero, String cliente, BigDecimal valor) {
+	private float valor;
+	public Venda(Livro[] livros, int numero, String cliente, float valor) {
 		this.livros = livros;
 		this.numero = numero;
 		this.cliente = cliente;
@@ -41,10 +39,10 @@ public class Venda {
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
-	public BigDecimal getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(BigDecimal valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 	
