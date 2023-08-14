@@ -1,29 +1,35 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Venda {
-    private Livro[] livros;
+    private List<Livro> livros;
     private static int numVendas = 0;
-    private int numero;
+    private static int numero = 0;
     private String cliente;
     private float valor;
 
-    public Venda(Livro[] livros, int numero, String cliente, float valor) {
-        this.livros = livros;
-        this.numero = numero;
+    public Venda(String cliente) {
         this.cliente = cliente;
-        this.valor = valor;
+        numVendas++;
+        this.livros = new ArrayList<>();
+        numero++;
     }
 
     public Venda() {
-        super();
+        numVendas++;
+        this.livros = new ArrayList<>();
+        numero++;
     }
 
-    public Livro[] getLivros() {
+    public List<Livro> getLivros() {
         return livros;
     }
 
-    public void setLivros(Livro[] livros) {
+    public Venda setLivros(List<Livro> livros) {
         this.livros = livros;
+        return this;
     }
 
     public static int getNumVendas() {
@@ -34,36 +40,34 @@ public class Venda {
         Venda.numVendas = numVendas;
     }
 
-    public int getNumero() {
+    public static int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public static void setNumero(int numero) {
+        Venda.numero = numero;
     }
 
     public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public Venda setCliente(String cliente) {
         this.cliente = cliente;
+        return this;
     }
 
     public float getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public Venda setValor(float valor) {
         this.valor = valor;
+        return this;
     }
 
-    public void addLivro(Livro l, int index) {
-        if (index >= 0 && index < livros.length) {
-            livros[index] = l;
-        } else {
-            System.out.println("Índice inválido.");
-        }
+    public void addLivro(Livro livro) {
+        livros.add(livro);
     }
 
     public void listarLivros() {

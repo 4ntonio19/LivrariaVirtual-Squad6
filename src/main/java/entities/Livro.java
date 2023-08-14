@@ -52,7 +52,7 @@ public abstract class Livro {
 
     @Override
     public String toString() {
-        return "Livro [titulo=" + titulo + ", autores=" + autores + ", editora=" + editora + ", preco=" + preco + "]";
+        return "\nTitulo: " + titulo + "\nAutores: " + autores + "\nEditora: " + editora + "\nPreco: R$" + preco + "\n";
     }
 
 
